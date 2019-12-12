@@ -25,6 +25,36 @@ $fejlec = [ "Cím",
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Könyveim</title>
+    <style>
+        #myBooks{
+            margin: auto;
+        }
+        #myBooks, #myBooks th, td{
+            border: 1px green solid;
+        }
+        #myBooks td{
+            padding: 6px;
+        }
+        #myBooks th{
+            background-color: darkgreen;
+            color: white;
+        }
+        #myBooks tr:nth-child(even){
+            background-color: #b3e6b3;
+        }
+        #myBooks tr:nth-child(odd){
+            background-color: #eff5ef;
+        }
+        #myBooks td{
+            color: darkgreen;
+        }
+    </style>
+    • A fejléc cellái legyenek sötétzöld hátterűek és fehér szöveggel írva!
+    • Lássa el zebra csíkozással!
+    o A páros sorok háttere legyen #b3e6b3 színű.
+    o A páratlan sorok háttere legyen #eff5ef.
+    o A szöveg színe legyen sötétzöld.
+    • Legyen vízszintesen középre igazított!
 </head>
 <body>
     <table id="myBooks">
