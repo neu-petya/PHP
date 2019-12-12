@@ -25,7 +25,8 @@ $statement->execute();
         <tr>
             <th>Cím</th>
             <th>Szerző</th>
-            <th>Kiadó és oldalak száma</th>
+            <th>Kiadó</th>
+            <th>Oldalak száma</th>
         </tr>
         <?php /** @var $konyv Konyv */?>
         <?php while($konyv = $statement->fetchObject(Konyv::class)):?>
@@ -37,7 +38,10 @@ $statement->execute();
                     <?=$konyv->getSzerzo()?>
                 </td>
                 <td>
-                    <?=$konyv->getKiado()." ".$konyv->getOldalakSzama()?>
+                    <?=$konyv->getKiado()?>
+                </td>
+                <td>
+                    <?=$konyv->getOldalakSzama()?>
                 </td>
             </tr>
         <?php endwhile;?>
