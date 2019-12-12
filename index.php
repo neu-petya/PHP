@@ -11,6 +11,12 @@ $statement = $pdo->prepare($sql);
 $statement->execute();
 //$rows = $statement -> fetchAll();
 //var_dump($rows);
+$fejlec = [ "Cím",
+            "Szerző",
+            "Kategória",
+            "Kiadó",
+            "Oldalak száma",
+    ];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,10 +29,10 @@ $statement->execute();
 <body>
     <table id="myBooks">
         <tr>
-            <th>Cím</th>
-            <th>Szerző</th>
-            <th>Kiadó</th>
-            <th>Oldalak száma</th>
+            <?php foreach($fejlec as $fejlecElem){
+                echo "<th>".$fejlecElem."</th>";
+            }?>
+
         </tr>
         <?php /** @var $konyv Konyv */?>
         <?php while($konyv = $statement->fetchObject(Konyv::class)):?>
@@ -36,6 +42,9 @@ $statement->execute();
                 </td>
                 <td>
                     <?=$konyv->getSzerzo()?>
+                </td>
+                <td>
+                    <?=$konyv->getKategoria()?>
                 </td>
                 <td>
                     <?=$konyv->getKiado()?>
